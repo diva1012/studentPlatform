@@ -1,0 +1,37 @@
+<head>
+  <title>StudentPlatform</title>
+</head>
+
+<body>
+
+  <script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '185013235166746',
+      xfbml      : true,
+      version    : 'v2.5'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+  <h1>Welcome to Meteor!</h1>
+
+  {{> loginButtons}}
+
+  {{> hello}}
+
+</body>
+
+<template name="hello">
+  <button>Click Me</button>
+  <p>You've pressed the button {{counter}} times.</p>
+</template>
