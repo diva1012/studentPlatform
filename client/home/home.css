@@ -6,3 +6,13 @@
     left:0;
     background-color:#AAAAAA;
 }
+
+.top-distance{
+  position: absolute;
+  top: 8px;
+  left: 55px;
+}
+
+.bigger-header{
+  height: 120px:
+}

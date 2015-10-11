@@ -20,6 +20,10 @@ body {
 .navbar-default .dropdown-menu {background-color:#ffffff;}
 .navbar-default .dropdown-menu li > a {padding-left:30px;}
 
+.navbar .navbar-inner {
+max-height: 50px;
+}
+
 .header {background-color:#ffffff;border-width:0;}
 .header .navbar-collapse {background-color:#ffffff;}
 .btn,.form-control,.panel,.list-group,.well {border-radius:1px;box-shadow:0 0 0;}
@@ -100,19 +104,22 @@ h3,h4,h5 {
 }
 
 #main {
- padding-top:120px;
+ padding-top:105px;
 }
 
-.container-sorter-width {
+.container-shorter-width {
   width: 100%;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-top: 0px
 }
 
 .row-5-gutter{
-    margin-left: 5px;
-    margin-right: 5px;
+    margin-left: 3px;
+    margin-right: 3px;
 }
 
 .col-5-gutter{
-    padding-left: 5px;
-    padding-right: 5px
+    padding-left: 3px;
+    padding-right: 3px
 }

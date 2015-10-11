@@ -1,6 +1,51 @@
 <template name="Bicycle">
 
-  <div class="container container-sorter-width layout-shorter-gutter" id="main">
+  <!-- Second Header -->
+
+  <div class="navbar navbar-default" id="subnav">
+
+            <a class="navbar-brand pull-left" href="{{pathFor 'Bicycle'}}">
+              <img alt="Brand" src="/images/Bicycle.png" width="20px" height="20px">
+            </a>
+
+            <a class="navbar-brand pull-left" href="{{pathFor 'Book'}}">
+              <img alt="Brand" src="/images/Book.png" width="20px" height="20px">
+            </a>
+
+            <a class="navbar-brand pull-left" href="{{pathFor 'Car'}}">
+              <img alt="Brand" src="/images/Car.png" width="20px" height="20px">
+            </a>
+
+            <a class="navbar-brand pull-left" href="{{pathFor 'Chair'}}">
+              <img alt="Brand" src="/images/Chair.png" width="20px" height="20px">
+            </a>
+
+            <a class="navbar-brand pull-left" href="{{pathFor 'Haus'}}">
+              <img alt="Brand" src="/images/Haus.png" width="20px" height="20px">
+            </a>
+
+            <a class="navbar-brand pull-left" href="{{pathFor 'Rating'}}">
+              <img alt="Brand" src="/images/Rating.png" width="20px" height="20px">
+            </a>
+
+            <a href="#" data-toggle="dropdown" class="navbar-brand pull-right dropdown-toggle" >
+              <img alt="Brand" src="/images/Hamburger.png" width="20px" height="20px">
+            </a>
+            <ul class="dropdown-menu pull-right">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">Separated link</a></li>
+            </ul>
+
+  </div>
+
+  <!-- END Second Header -->
+
+
+
+  <div class="container container-shorter-width layout-shorter-gutter" id="main">
 
    <div class="row row-5-gutter">
      <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 col-5-gutter">
