@@ -71,6 +71,7 @@ textarea {
  width:50px;
  height:50px;
 }
+
 .list-group-item:first-child,.list-group-item:last-child {
  border-radius:0;
 }
@@ -109,8 +110,15 @@ h3,h4,h5 {
  padding-top:105px;
 }
 
-.container-shorter-width {
+.container-full-width {
   width: 100%;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-top: 0px
+}
+
+.container-shorter-width {
+  width: 70%;
   padding-left: 0px;
   padding-right: 0px;
   padding-top: 0px

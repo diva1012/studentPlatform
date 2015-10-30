@@ -24,3 +24,4 @@ accounts-password
 insecure
 mizzao:bootstrap-3
 iron:router
+http

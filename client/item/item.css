@@ -1,3 +1,27 @@
 .panel-no-padding{
   padding-left: 0px;
 }
+
+.panel-small-padding{
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.small-margin{
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.company-logo{
+    max-width: 65px;
+}
+
+.price-text-color{
+  color: #4285f4;
+}
+
+.verticalLine {
+    border-left: thick solid #ff0000;
+}
