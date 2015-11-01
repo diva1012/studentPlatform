@@ -26,28 +26,48 @@
               <img class="rating-button" alt="Brand" src="/images/Rating.png" width="20px" height="20px">
             </a>
 
+            <div id="menu-button" class="navbar-brand pull-right">
+              <img class="rating-button" alt="Brand" src="/images/Hamburger.png" width="20px" height="20px">
+            </div>
 
 
-            <a href="#" data-toggle="dropdown" class="navbar-brand pull-right dropdown-toggle" style="background-color: {{colorTwo}}">
-              <img alt="Brand" src="/images/Hamburger.png" width="20px" height="20px">
-            </a>
-            <ul class="dropdown-menu pull-right">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
-              <li role="separator" class="divider"></li>
-              <li><a href="#">Separated link</a></li>
-            </ul>
+              <div class="panel panel-default absolute-pos" id="right-menu" style="visibility: hidden; background-color: {{colorOne}}">
+                <div class="panel-body">
+                  <b><span style="font-size: large"> Sucheintellungen </span></b>  <br>
+                  <hr>
+                  <div>Abfahrtzeit von {{slider1.[0]}} bis {{slider1.[1]}}</div>
+                  <div id="slider1" style="margin-top: 15px;"></div>
+                  <hr>
+                  <div>Ankuftszeit von {{slider2.[0]}} bis {{slider2.[1]}}</div>
+                  <div id="slider2" style="margin-top: 15px;"></div>
+                  <hr>
+                  <div>Preis von {{slider3.[0]}} bis {{slider3.[1]}}</div>
+                  <div id="slider3" style="margin-top: 15px;"></div>
+                  <hr>
+                  <div>Quellen: <span class="pull-right disabled"><input id="toggle-provider" type="checkbox" checked data-toggle="toggle" data-size="mini"></span> </div>
+
+                  <div id="panel-provider" class="panel panel-default" style="margin-top: 15px;">
+              			<div class="panel-body">
+                         <div style="margin-top: 10px;">Mitfahrgelegenheit.de: <span class="pull-right disabled"><input type="checkbox" checked data-toggle="toggle" data-size="mini"></span> </div>
+                         <div style="margin-top: 10px;">Blablacar.de: <span class="pull-right disabled"><input type="checkbox" checked data-toggle="toggle" data-size="mini"></span> </div>
+                         <div style="margin-top: 10px;">Facebook-Gruppen: <span class="pull-right disabled"><input type="checkbox" checked data-toggle="toggle" data-size="mini"></span> </div>
+
+                    </div>
+            		 </div>
+
+                </div>
+
+              </div>
 
   </div>
 
   <!-- HEADER END -->
 
-  <div class="container container-full-width layout-shorter-gutter" id="main">
+  <div class="container container-full-width container-shorter-width-bycicle layout-shorter-gutter" id="main">
 
 
    <div class="row row-5-gutter">
-     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 col-5-gutter">
+     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 col-5-gutter">
 
        {{#each bicycles}}
          {{> Itembicycle}}
@@ -64,7 +84,7 @@
      </div>
 
 
-     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 col-5-gutter">
+     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 col-5-gutter">
 
         {{> Item}}
         {{> Item2}}
@@ -76,7 +96,7 @@
 
      </div>
 
-     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 col-5-gutter">
+     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 col-5-gutter">
 
         {{> Item2}}
         {{> Item}}
@@ -87,7 +107,7 @@
 
      </div>
 
-     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 col-5-gutter">
+     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 col-5-gutter">
 
         {{> Item2}}
         {{> Item}}
@@ -98,7 +118,7 @@
 
      </div>
 
-     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 col-5-gutter">
+     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 col-5-gutter">
 
         {{> Item}}
         {{> Item2}}
@@ -109,7 +129,7 @@
 
      </div>
 
-     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 col-5-gutter">
+     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 col-5-gutter">
 
         {{> Item2}}
         {{> Item2}}
@@ -121,7 +141,7 @@
      </div>
 
      <!--
-     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 col-5-gutter">
+     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 col-5-gutter">
 
 
        {{> Item}}
@@ -162,7 +182,7 @@
 
     	</div>
 
-      <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 col-5-gutter">
+      <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 col-5-gutter">
 
             <div class="well">
                <form class="form">
@@ -197,7 +217,7 @@
 
     	</div>
 
-      <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 col-5-gutter">
+      <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 col-5-gutter">
            <div class="panel panel-default">
              <div class="panel-heading"><a href="#" class="pull-right">View all</a> <h4>Portlet Heading</h4></div>
      			<div class="panel-body">
@@ -247,7 +267,7 @@
 
 
 
-      <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 col-5-gutter">
+      <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 col-5-gutter">
            <div class="panel panel-default">
              <div class="panel-heading"><a href="#" class="pull-right">View all</a> <h4>Portlet Heading</h4></div>
           <div class="panel-body">
@@ -294,7 +314,7 @@
 
       </div>
 
-      <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 col-5-gutter">
+      <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 col-5-gutter">
            <div class="panel panel-default">
              <div class="panel-heading"><a href="#" class="pull-right">View all</a> <h4>Portlet Heading</h4></div>
           <div class="panel-body">
@@ -341,7 +361,7 @@
 
       </div>
 
-      <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 col-5-gutter">
+      <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 col-5-gutter">
            <div class="panel panel-default">
              <div class="panel-heading"><a href="#" class="pull-right">View all</a> <h4>Portlet Heading</h4></div>
           <div class="panel-body">

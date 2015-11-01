@@ -26,3 +26,5 @@ mizzao:bootstrap-3
 iron:router
 http
 rajit:bootstrap3-datepicker
+jiku:bootstrap-toggle
+rcy:nouislider

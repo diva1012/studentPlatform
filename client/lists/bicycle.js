@@ -1,8 +1,102 @@
+// slider starts at 20 and 80
+Session.setDefault("slider1", [20, 80]);
+Session.setDefault("slider2", [20, 80]);
+Session.setDefault("slider3", [20, 80]);
+
+
+Template.Bicycle.events({
+  "click #menu-button": function(event, template){
+
+    var isMenuShown = Session.get("menuVisible");
+
+    if (isMenuShown) {
+        document.getElementById("right-menu").style.visibility='hidden';
+        Session.set("menuVisible", false);
+    } else {
+      document.getElementById("right-menu").style.visibility='visible';
+      Session.set("menuVisible", true);
+    }
+  },
+
+  "change #toggle-provider": function(event) {
+    var toggleProvider = document.getElementById("toggle-provider");
+    if (toggleProvider.checked){
+      document.getElementById("panel-provider").style.display = "block";
+    } else {
+      document.getElementById("panel-provider").style.display = "none";
+    }
+  }
+
+});
+
 Template.Bicycle.rendered = function() {
     mySetColors("#05c272", "#03663c");
+
+    this.$("#slider1").noUiSlider({
+      start: Session.get("slider1"),
+      connect: true,
+      range: {
+        'min': 0,
+        'max': 100,
+      },
+      step: 1
+
+    }).on('slide', function (ev, val) {
+      // set real values on 'slide' event
+      Session.set('slider1', val);
+    }).on('change', function (ev, val) {
+      // round off values on 'change' event
+      Session.set('slider1', [Math.round(val[0]), Math.round(val[1])]);
+    });
+
+    this.$("#slider2").noUiSlider({
+      start: Session.get("slider2"),
+      connect: true,
+      range: {
+        'min': 0,
+        'max': 100
+      },
+      step: 1
+
+    }).on('slide', function (ev, val) {
+      // set real values on 'slide' event
+      Session.set('slider2', val);
+    }).on('change', function (ev, val) {
+      // round off values on 'change' event
+      Session.set('slider2', [Math.round(val[0]), Math.round(val[1])]);
+    });
+
+    this.$("#slider3").noUiSlider({
+      start: Session.get("slider3"),
+      connect: true,
+      range: {
+        'min': 0,
+        'max': 100
+      },
+      step: 1
+
+    }).on('slide', function (ev, val) {
+      // set real values on 'slide' event
+      Session.set('slider3', val);
+    }).on('change', function (ev, val) {
+      // round off values on 'change' event
+      Session.set('slider3', [Math.round(val[0]), Math.round(val[1])]);
+    });
 }
 
 Template.Bicycle.helpers({
+
+  slider1: function () {
+      return Session.get("slider1");
+  },
+
+  slider2: function () {
+      return Session.get("slider2");
+  },
+
+  slider3: function () {
+      return Session.get("slider3");
+  },
 
   bicycles: function() {
     // server async

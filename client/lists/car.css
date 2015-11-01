@@ -1,0 +1,8 @@
+.absolute-pos {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    width: 300px;
+    border: none;
+    box-shadow: none;
+  }
