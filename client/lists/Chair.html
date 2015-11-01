@@ -1,5 +1,49 @@
 <template name="Chair">
 
+
+    <div class="navbar navbar-default" style="background-color: {{colorTwo}}" id="subnav">
+
+      <a class="bicycle-button navbar-brand pull-left" href="{{pathFor 'Bicycle'}}">
+        <img class="bicycle-button" alt="Brand" src="/images/Bicycle.png" width="20px" height="20px">
+      </a>
+
+      <a class="book-button navbar-brand pull-left" href="{{pathFor 'Book'}}">
+        <img class="book-button" alt="Brand" src="/images/Book.png" width="20px" height="20px">
+      </a>
+
+      <a class="car-button navbar-brand pull-left" href="{{pathFor 'Car'}}">
+        <img class="car-button" alt="Brand" src="/images/Car.png" width="20px" height="20px">
+      </a>
+
+      <a class="chair-button navbar-brand pull-left" href="{{pathFor 'Chair'}}">
+        <img class="chair-button" alt="Brand" src="/images/Chair.png" width="20px" height="20px">
+      </a>
+
+      <a class="haus-button navbar-brand pull-left" href="{{pathFor 'Haus'}}">
+        <img class="haus-button" alt="Brand" src="/images/Haus.png" width="20px" height="20px">
+      </a>
+
+      <a class="rating-button navbar-brand pull-left" href="{{pathFor 'Rating'}}">
+        <img class="rating-button" alt="Brand" src="/images/Rating.png" width="20px" height="20px">
+      </a>
+
+
+
+              <a href="#" data-toggle="dropdown" class="navbar-brand pull-right dropdown-toggle" style="background-color: {{colorTwo}}">
+                <img alt="Brand" src="/images/Hamburger.png" width="20px" height="20px">
+              </a>
+              <ul class="dropdown-menu pull-right">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+              </ul>
+
+    </div>
+
+    <!-- HEADER END -->
+
   <div class="container container-full-width layout-shorter-gutter" id="main">
 
    <div class="row row-5-gutter">

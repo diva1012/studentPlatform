@@ -118,7 +118,7 @@ h3,h4,h5 {
 }
 
 .container-shorter-width {
-  width: 70%;
+  max-width: 1000px;
   padding-left: 0px;
   padding-right: 0px;
   padding-top: 0px

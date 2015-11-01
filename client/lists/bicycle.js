@@ -1,3 +1,7 @@
+Template.Bicycle.rendered = function() {
+    mySetColors("#05c272", "#03663c");
+}
+
 Template.Bicycle.helpers({
 
   bicycles: function() {

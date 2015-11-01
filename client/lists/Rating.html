@@ -1,4 +1,48 @@
-<template name="List">
+<template name="Rating">
+
+
+    <div class="navbar navbar-default" style="background-color: {{colorTwo}}" id="subnav">
+
+      <a class="bicycle-button navbar-brand pull-left" href="{{pathFor 'Bicycle'}}">
+        <img class="bicycle-button" alt="Brand" src="/images/Bicycle.png" width="20px" height="20px">
+      </a>
+
+      <a class="book-button navbar-brand pull-left" href="{{pathFor 'Book'}}">
+        <img class="book-button" alt="Brand" src="/images/Book.png" width="20px" height="20px">
+      </a>
+
+      <a class="car-button navbar-brand pull-left" href="{{pathFor 'Car'}}">
+        <img class="car-button" alt="Brand" src="/images/Car.png" width="20px" height="20px">
+      </a>
+
+      <a class="chair-button navbar-brand pull-left" href="{{pathFor 'Chair'}}">
+        <img class="chair-button" alt="Brand" src="/images/Chair.png" width="20px" height="20px">
+      </a>
+
+      <a class="haus-button navbar-brand pull-left" href="{{pathFor 'Haus'}}">
+        <img class="haus-button" alt="Brand" src="/images/Haus.png" width="20px" height="20px">
+      </a>
+
+      <a class="rating-button navbar-brand pull-left" href="{{pathFor 'Rating'}}">
+        <img class="rating-button" alt="Brand" src="/images/Rating.png" width="20px" height="20px">
+      </a>
+
+
+
+              <a href="#" data-toggle="dropdown" class="navbar-brand pull-right dropdown-toggle" style="background-color: {{colorTwo}}">
+                <img alt="Brand" src="/images/Hamburger.png" width="20px" height="20px">
+              </a>
+              <ul class="dropdown-menu pull-right">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+              </ul>
+
+    </div>
+
+    <!-- HEADER END -->
 
   <div class="container container-full-width layout-shorter-gutter" id="main">
 
@@ -16,7 +60,7 @@
                 <a href="http://bootply.com/tagged/datatable" class="list-group-item">Data Grids</a>
               </div>
             </div>
-     		  </div>
+          </div>
 
           <div class="well">
                <form class="form-horizontal" role="form">
@@ -30,7 +74,7 @@
 
           <div class="panel panel-default">
             <div class="panel-heading"><a href="#" class="pull-right">View all</a> <h4>More Templates</h4></div>
-     		  	<div class="panel-body">
+            <div class="panel-body">
               <img src="//placehold.it/150x150" class="img-circle pull-right"> <a href="#">Free @Bootply</a>
               <div class="clearfix"></div>
               There a load of new free Bootstrap 3 ready templates at Bootply. All of these templates are free and don't require extensive customization to the Bootstrap baseline.
@@ -39,7 +83,7 @@
             </div>
            </div>
 
-    	</div>
+      </div>
 
       <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 col-5-gutter">
 
@@ -53,9 +97,9 @@
               </form>
             </div>
 
-        	 <div class="panel panel-default">
+           <div class="panel panel-default">
              <div class="panel-heading"><a href="#" class="pull-right">View all</a> <h4>Bootply Editor &amp; Code Library</h4></div>
-     			<div class="panel-body">
+          <div class="panel-body">
                 <p><img src="//placehold.it/150x150" class="img-circle pull-right"> <a href="#">The Bootstrap Playground</a></p>
                 <div class="clearfix"></div>
                 <hr>
@@ -63,34 +107,34 @@
               </div>
            </div>
 
-        	 <div class="panel panel-default">
+           <div class="panel panel-default">
              <div class="panel-heading"><a href="#" class="pull-right">View all</a> <h4>Portlet Heading</h4></div>
-     			<div class="panel-body">
+          <div class="panel-body">
                 <ul class="list-group">
                 <li class="list-group-item">Modals</li>
                 <li class="list-group-item">Sliders / Carousel</li>
                 <li class="list-group-item">Thumbnails</li>
                 </ul>
               </div>
-     		 </div>
+         </div>
 
-    	</div>
+      </div>
 
       <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 col-5-gutter">
            <div class="panel panel-default">
              <div class="panel-heading"><a href="#" class="pull-right">View all</a> <h4>Portlet Heading</h4></div>
-     			<div class="panel-body">
+          <div class="panel-body">
                 <ul class="list-group">
                 <li class="list-group-item">Bootply Playground</li>
                 <li class="list-group-item">Bootstrap Editor</li>
                 <li class="list-group-item">Bootstrap Templates</li>
                 </ul>
               </div>
-     		</div>
+        </div>
 
           <div class="panel panel-default">
              <div class="panel-heading"><a href="#" class="pull-right">View all</a> <h4>Stackoverflow</h4></div>
-     			<div class="panel-body">
+          <div class="panel-body">
                 <img src="//placehold.it/150x150" class="img-circle pull-right"> <a href="#">Keyword: Bootstrap</a>
                 <div class="clearfix"></div>
                 <hr>
@@ -105,21 +149,21 @@
                   </div>
                   <input type="text" class="form-control" placeholder="Add a comment..">
                 </div>
-            	  </form>
+                </form>
 
               </div>
            </div>
 
           <div class="panel panel-default">
             <div class="panel-heading"><a href="#" class="pull-right">View all</a> <h4>Top Items</h4></div>
-     			  <div class="panel-body">
+            <div class="panel-body">
               <div class="list-group">
                 <a href="http://bootply.com/tagged/bootstrap-3" class="list-group-item active">Bootstrap 3</a>
                 <a href="http://bootply.com/tagged/snippets" class="list-group-item">Snippets</a>
                 <a href="http://bootply.com/tagged/example" class="list-group-item">Examples</a>
               </div>
             </div>
-     		  </div>
+          </div>
 
       </div>
 
@@ -273,5 +317,6 @@
 
     </div>
   </div>
+
 
 </template>

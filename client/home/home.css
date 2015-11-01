@@ -16,3 +16,10 @@
 .bigger-header{
   height: 120px:
 }
+
+
+.top-distance2{
+  position: absolute;
+  top: 8px;
+  left: 300px;
+}

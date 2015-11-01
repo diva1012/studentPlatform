@@ -1,3 +1,9 @@
 .width100vh{
   width:100vh;
 }
+
+.navbar-nav {
+  width: 100%;
+  text-align: center;
+
+}

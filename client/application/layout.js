@@ -3,3 +3,7 @@ Template.layout.helpers({
     return Session.get('pageTitle');
   }
 });
+
+Template.layout.events({
+
+});

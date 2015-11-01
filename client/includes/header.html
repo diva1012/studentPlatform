@@ -1,23 +1,10 @@
 <template name="Header">
 
   <nav class="bigger-header navbar navbar-fixed-top header"  style="background-color: {{colorOne}}" id="mainnav">
-
-
-    <form class="pull-left top-distance">
-        <div class="input-group" style="max-width:200px;">
-          <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
-          <div class="input-group-btn">
-            <button class="btn btn-default btn-primary" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-          </div>
-        </div>
-    </form>
-
-
-
-    <a class="navbar-brand pull-left" href="{{pathFor 'Bicycle'}}">
-      <img alt="Brand" src="/images/Bicycle.png" width="20px" height="20px">
+    <a class="navbar-left navbar-brand" href="{{pathFor 'Bicycle'}}">
+      <img alt="Brand" src="/images/Scope.png" width="20px" height="20px">
     </a>
-
+    <span class="navbar-left navbar-brand"><b>Home</b></span>
 
     <a class="navbar-brand pull-right" href="#">
       <img alt="Brand" src="/images/Germany.png" width="20px" height="20px">
@@ -27,86 +14,6 @@
       {{> loginButtons align="right"}}
     </div>
 
-
-
-<!--
-          <div class="navbar-header">
-            <a href="#" class="navbar-brand">SP</a>
-          </div>
-
-
-            <form class="navbar-form pull-left">
-                <div class="input-group" style="max-width:50px;">
-                  <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
-                  <div class="input-group-btn">
-                    <button class="btn btn-default btn-primary" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-                  </div>
-                </div>
-            </form>
-
-            <a class="navbar-brand pull-right" href="{{pathFor 'Chair'}}">
-              <img alt="Brand" src="/images/Chair.png" width="20px" height="20px">
-            </a>
--->
-
-
-
   </nav>
 
-
-  <div class="navbar navbar-default" style="background-color: {{colorTwo}}" id="subnav">
-
-            <a id="12342" class="bicycle-button navbar-brand pull-left" href="{{pathFor 'Bicycle'}}">
-              <img class="bicycle-button" alt="Brand" src="/images/Bicycle.png" width="20px" height="20px">
-            </a>
-
-            <a class="navbar-brand pull-left" href="{{pathFor 'Book'}}">
-              <img class="book-button" alt="Brand" src="/images/Book.png" width="20px" height="20px">
-            </a>
-
-            <a class="navbar-brand pull-left" href="{{pathFor 'Car'}}">
-              <img class="car-button" alt="Brand" src="/images/Car.png" width="20px" height="20px">
-            </a>
-
-            <a class="navbar-brand pull-left" href="{{pathFor 'Chair'}}">
-              <img class="chair-button" alt="Brand" src="/images/Chair.png" width="20px" height="20px">
-            </a>
-
-            <a class="navbar-brand pull-left" href="{{pathFor 'Haus'}}">
-              <img class="haus-button" alt="Brand" src="/images/Haus.png" width="20px" height="20px">
-            </a>
-
-            <a class="navbar-brand pull-left" href="{{pathFor 'Rating'}}">
-              <img class="rating-button" alt="Brand" src="/images/Rating.png" width="20px" height="20px">
-            </a>
-
-
-
-            <a href="#" data-toggle="dropdown" class="navbar-brand pull-right dropdown-toggle" style="background-color: {{colorTwo}}">
-              <img alt="Brand" src="/images/Hamburger.png" width="20px" height="20px">
-            </a>
-            <ul class="dropdown-menu pull-right">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
-              <li role="separator" class="divider"></li>
-              <li><a href="#">Separated link</a></li>
-            </ul>
-
-  </div>
-
 </template>
-
-
-<!--
-
-      <a href="#" class="dropdown-toggle pull-right" data-toggle="dropdown"><i class="glyphicon glyphicon-bell"></i></a>
-      <ul class="dropdown-menu">
-        <li><a href="#"><span class="badge pull-right">40</span>Link</a></li>
-        <li><a href="#"><span class="badge pull-right">2</span>Link</a></li>
-        <li><a href="#"><span class="badge pull-right">0</span>Link</a></li>
-        <li><a href="#"><span class="label label-info pull-right">1</span>Link</a></li>
-        <li><a href="#"><span class="badge pull-right">13</span>Link</a></li>
-      </ul>
-
-    -->
