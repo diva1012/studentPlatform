@@ -15,6 +15,34 @@ Template.Car.rendered = function() {
       }
     });
 
+    // Render toggles and assign events
+    $('#toggle-provider-cars')['bootstrapSwitch']();
+    $('#toggle-provider-cars').on('switch-change', function (event, data) {
+      if (data.value){
+        document.getElementById("panel-provider-cars").style.display = "block";
+      } else {
+        document.getElementById("panel-provider-cars").style.display = "none";
+      }
+    });
+
+    $('#toggle-pr1')['bootstrapSwitch']();
+    $('#toggle-pr1').on('switch-change', function (event, data) {
+      if (data.value){      }
+      else {      }
+    });
+
+    $('#toggle-pr2')['bootstrapSwitch']();
+    $('#toggle-pr2').on('switch-change', function (event, data) {
+      if (data.value){      }
+      else {      }
+    });
+
+    $('#toggle-pr3')['bootstrapSwitch']();
+    $('#toggle-pr3').on('switch-change', function (event, data) {
+      if (data.value){      }
+      else {      }
+    });
+
     // Calender settings
     $('#my-datepicker').datepicker({
       format: "dd.mm.yyyy",
@@ -133,15 +161,6 @@ Template.Car.events({
     } else {
       document.getElementById("right-menu-cars").style.visibility='visible';
       Session.set("menuVisibleCars", true);
-    }
-  },
-
-  "change #toggle-provider-cars": function(event) {
-    var toggleProvider = document.getElementById("toggle-provider-cars");
-    if (toggleProvider.checked){
-      document.getElementById("panel-provider-cars").style.display = "block";
-    } else {
-      document.getElementById("panel-provider-cars").style.display = "none";
     }
   }
 
