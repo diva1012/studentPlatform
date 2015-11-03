@@ -95,7 +95,7 @@ Template.Bicycle.rendered = function() {
       step: 1
     }).on('slide', function (ev, val) {
       // set real values on 'slide' event
-      Session.set('slider-bicycle1', val);
+      Session.set('slider-bicycle1', [Math.round(val[0]), Math.round(val[1])]);
     }).on('change', function (ev, val) {
       // round off values on 'change' event
       Session.set('slider-bicycle1', [Math.round(val[0]), Math.round(val[1])]);

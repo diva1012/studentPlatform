@@ -12,6 +12,7 @@ Template.Car.rendered = function() {
         console.log("error occured on receiving data from server. ", err );
       } else {
         Session.set("carsList",respJson.data.results);
+        Session.set("filteredCarList",respJson.data.results);
       }
     });
 
@@ -76,11 +77,9 @@ Template.Car.rendered = function() {
       step: 1
 
     }).on('slide', function (ev, val) {
-      // set real values on 'slide' event
-      Session.set('slider-cars2', val);
-    }).on('change', function (ev, val) {
-      // round off values on 'change' event
       Session.set('slider-cars2', [Math.round(val[0]), Math.round(val[1])]);
+    }).on('change', function (ev, val) {
+
     });
 
     this.$("#slider-cars3").noUiSlider({
@@ -93,11 +92,17 @@ Template.Car.rendered = function() {
       step: 1
 
     }).on('slide', function (ev, val) {
-      // set real values on 'slide' event
-      Session.set('slider-cars3', val);
-    }).on('change', function (ev, val) {
-      // round off values on 'change' event
+      // round off values
       Session.set('slider-cars3', [Math.round(val[0]), Math.round(val[1])]);
+    }).on('change', function (ev, val) {
+
+      var allCars = Session.get("carsList")
+      debugger
+      var filteredCars = $.grep( allCars, function( n, i ) {
+          return (n.price >= val[0] && n.price <= val[1]);
+      });
+
+      Session.set("filteredCarList", filteredCars);
     });
 
 }
@@ -117,7 +122,7 @@ Template.Car.helpers({
   },
 
   cars: function() {
-    return Session.get("carsList");
+    return Session.get("filteredCarList");
   },
 
   todaysDate: function() {
