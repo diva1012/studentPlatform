@@ -16,7 +16,7 @@
       </a>
 
       <a class="chair-button navbar-brand pull-left" href="{{pathFor 'Chair'}}">
-        <img class="chair-button" alt="Brand" src="/images/Chair.png" width="20px" height="20px">
+        <img class="chair-button" alt="Brand" src="/images/Table.png" width="20px" height="20px">
       </a>
 
       <a class="haus-button navbar-brand pull-left" href="{{pathFor 'Haus'}}">
@@ -69,9 +69,27 @@
 
     <!-- HEADER END -->
 
-  <div class="container container-full-width layout-shorter-gutter" id="main">
+    <div class="container container-shorter-width layout-shorter-gutter" id="main">
 
-  </div>
+      <div class="row row-5-gutter">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-12-gutter" style="padding-left: 0px; padding-right: 0px;">
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <div class="row">
 
+                {{#each items}}
+
+                  {{> Itemchair}}
+
+                  <hr>
+
+                {{/each}}
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
 </template>

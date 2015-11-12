@@ -23,5 +23,26 @@ Meteor.methods({
         });
 
         */
+    },
+
+    getEbay: function(item, city) {
+
+            return HTTP.get("https://api.import.io/store/data/c696fcaa-bfbf-47b5-8687-42f660c97fe7/_query?input/" +
+              "item=" + item +
+              "&input/location="+ city +
+              "&_user=2ed25222-c31c-42c8-b853-2c15e84ae95b&_apikey=2ed25222c31c42c8b8532c15e84ae95b1606321018eef3ce728d92b47edb83a19ec2b0a118aaaf3f3031b9caca58b847ee4826207b657a53b7cae209479fee9124d923af62941781b97329e4749ab24a")
+
+    },
+
+    getWGGesucht: function(city, minSize, maxRent) {
+
+            return HTTP.get("https://api.import.io/store/data/99aec30f-4127-4c81-8b63-c485fcf9e5d2/_query?input/" +
+
+              "stadtmanuel=" + city +
+              "&input/min_groesse=" + minSize +
+              "&input/max_miete=" + maxRent +
+              "&_user=2ed25222-c31c-42c8-b853-2c15e84ae95b&_apikey=2ed25222c31c42c8b8532c15e84ae95b1606321018eef3ce728d92b47edb83a19ec2b0a118aaaf3f3031b9caca58b847ee4826207b657a53b7cae209479fee9124d923af62941781b97329e4749ab24a")
     }
-  });
+
+
+});

@@ -2,3 +2,9 @@
 $('.pull-down').each(function() {
 	$(this).css('margin-top', $(this).parent().height()-$(this).height())
 });
+
+
+Template.Itemhaus.events({
+	"click .item-onclik": function(event, template){
+	}
+});

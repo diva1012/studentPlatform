@@ -101,37 +101,6 @@ Template.Bicycle.rendered = function() {
       Session.set('slider-bicycle1', [Math.round(val[0]), Math.round(val[1])]);
     });
 
-    this.$("#slider2").noUiSlider({
-      start: Session.get("slider2"),
-      connect: true,
-      range: {
-        'min': 0,
-        'max': 100
-      },
-      step: 1
-    }).on('slide', function (ev, val) {
-      // set real values on 'slide' event
-      Session.set('slider2', val);
-    }).on('change', function (ev, val) {
-      // round off values on 'change' event
-      Session.set('slider2', [Math.round(val[0]), Math.round(val[1])]);
-    });
-
-    this.$("#slider3").noUiSlider({
-      start: Session.get("slider3"),
-      connect: true,
-      range: {
-        'min': 0,
-        'max': 100
-      },
-      step: 1
-    }).on('slide', function (ev, val) {
-      // set real values on 'slide' event
-      Session.set('slider3', val);
-    }).on('change', function (ev, val) {
-      // round off values on 'change' event
-      Session.set('slider3', [Math.round(val[0]), Math.round(val[1])]);
-    });
 }
 
 Template.Bicycle.helpers({

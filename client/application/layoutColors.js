@@ -1,4 +1,4 @@
-Session.set("colorOne", "#05c272");
+Session.set("colorOne", "#FDCEB0");
 Session.set("colorTwo", "#03663c");
 
 Session.set("menuVisible", false);

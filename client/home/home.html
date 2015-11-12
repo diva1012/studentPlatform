@@ -1,66 +1,89 @@
 <template name="Home">
 
-  <div class="second" id="main">  hashds</div>
-
 <!--
-    <div class="row row-5-gutter">
-      <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 col-5-gutter">
-
-        <div class="panel panel-default onethird-height">
-
-          <div class="panel-heading"><a href="#" class="pull-right">View all</a>
-            <h4>Bootstrap Examples</h4>
-          </div>
-
-          <div class="panel-body">
-            <div class="list-group">
-              <a href="http://bootply.com/tagged/modal" class="list-group-item">Modal / Dialog</a>
-              <a href="http://bootply.com/tagged/datetime" class="list-group-item">Datetime Examples</a>
-              <a href="http://bootply.com/tagged/datatable" class="list-group-item">Data Grids</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 col-5-gutter">
-        <div class="well">
-          <form class="form-horizontal" role="form">
-            <h4>What's New</h4>
-            <div class="form-group" style="padding:14px;">
-              <textarea class="form-control" placeholder="Update your status"></textarea>
-            </div>
-            <button class="btn btn-success pull-right" type="button">Post</button>
-            <ul class="list-inline">
-              <li><a href="#"><i class="glyphicon glyphicon-align-left"></i></a></li>
-              <li><a href="#"><i class="glyphicon glyphicon-align-center"></i></a></li>
-              <li><a href="#"><i class="glyphicon glyphicon-align-right"></i></a></li>
-            </ul>
-          </form>
-        </div>
-      </div>
+  <div class="second" id="main">
 
 
-      <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 col-5-gutter">
-        <div class="panel panel-default">
-          <div class="panel-heading"><a href="#" class="pull-right">View all</a>
-            <h4>More Templates</h4>
-          </div>
-          <div class="panel-body">
-            <img src="//placehold.it/150x150" class="img-circle pull-right"> <a href="#">Free @Bootply</a>
-            <div class="clearfix"></div>
-            There a load of new free Bootstrap 3 ready templates at Bootply. All of these templates are free and don't require extensive customization to the Bootstrap baseline.
-            <hr>
-            <ul class="list-unstyled">
-              <li><a href="http://www.bootply.com/templates">Dashboard</a></li>
-              <li><a href="http://www.bootply.com/templates">Darkside</a></li>
-              <li><a href="http://www.bootply.com/templates">Greenfield</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
+    <button class="btn" id="btn-user-data">Get User Data</button>
+    <div class="well">
+        <pre id="result"></pre>
     </div>
+
   </div>
 -->
+
+<section id="portfolio" class="home-class">
+    <div class="container container-full-width" style="background: url(images/Cologne.jpg) no-repeat center top #000;">
+        <div class="row">
+            <div style="padding-bottom: 100px" class="col-lg-12 text-center">
+        <!--        <h2>Kategorien</h2>
+                <hr class="star-primary"> -->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4 portfolio-item">
+                <a href="{{pathFor 'Chair'}}" class="portfolio-link" data-toggle="modal">
+                    <div class="caption">
+                        <div class="caption-content">
+                            <i class="glyphicon glyphicon-search gi-5x"></i>
+                        </div>
+                    </div>
+                    <img src="/images/Table.png" class="img-responsive" alt="">
+                </a>
+            </div>
+            <div class="col-sm-4 portfolio-item">
+                <a href="{{pathFor 'Bicycle'}}" class="portfolio-link" data-toggle="modal">
+                  <div class="caption">
+                        <div class="caption-content">
+                            <i class="glyphicon glyphicon-search gi-5x"></i>
+                        </div>
+                    </div>
+                    <img src="/images/Bicycle.png" class="img-responsive" alt="">
+                </a>
+            </div>
+            <div class="col-sm-4 portfolio-item">
+                <a href="{{pathFor 'Haus'}}" class="portfolio-link" data-toggle="modal">
+                    <div class="caption">
+                        <div class="caption-content">
+                            <i class="glyphicon glyphicon-search gi-5x"></i>
+                        </div>
+                    </div>
+                    <img src="/images/Haus.png" class="img-responsive" alt="">
+                </a>
+            </div>
+            <div class="col-sm-4 portfolio-item">
+                <a href="{{pathFor 'Book'}}" class="portfolio-link" data-toggle="modal">
+                    <div class="caption">
+                        <div class="caption-content">
+                            <i class="glyphicon glyphicon-search gi-5x"></i>
+                        </div>
+                    </div>
+                    <img src="/images/Book.png" class="img-responsive" alt="">
+                </a>
+            </div>
+            <div class="col-sm-4 portfolio-item">
+                <a href="{{pathFor 'Car'}}" class="portfolio-link" data-toggle="modal">
+                    <div class="caption">
+                        <div class="caption-content">
+                            <i class="glyphicon glyphicon-search gi-5x"></i>
+                        </div>
+                    </div>
+                    <img src="/images/Car.png" class="img-responsive" alt="">
+                </a>
+            </div>
+            <div class="col-sm-4 portfolio-item">
+                <a href="{{pathFor 'Raiting'}}" class="portfolio-link" data-toggle="modal">
+                    <div class="caption">
+                        <div class="caption-content">
+                            <i class="glyphicon glyphicon-search gi-5x"></i>
+                        </div>
+                    </div>
+                    <img src="/images/Rating.png" class="img-responsive" alt="">
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
 
 </template>

@@ -3,6 +3,19 @@ Session.setDefault("slider-haus1", [20, 80]);
 Template.Haus.rendered = function() {
     mySetColors("#e6474b", "#802527");
 
+
+
+    // Get Mitfahrgelegenheit data.
+    Meteor.call('getWGGesucht', "Berlin", 15, 400, function(err, respJson) {
+
+      if(err) {
+        console.log("error occured on receiving data from server. ", err );
+      } else {
+        Session.set("itemsListHaus",respJson.data.results);
+        Session.set("filteredItemsListHaus",respJson.data.results);
+      }
+    });
+
     $('#toggle-type-haus')['bootstrapSwitch']();
     $('#toggle-type-haus').on('switch-change', function (event, data) {
       if (data.value){
@@ -107,6 +120,10 @@ Template.Haus.events({
 Template.Haus.helpers({
   slider_haus1: function () {
       return Session.get("slider-bicycle1");
-  }
+  },
+
+  items: function() {
+    return Session.get("filteredItemsListHaus");
+  },
 
 });
