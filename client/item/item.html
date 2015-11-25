@@ -99,11 +99,11 @@
 
 <template name="Itemcar">
 
-  <div style="height: 110px;">
+  <div style="height: 130px;">
 
 
     <div class="col-xs-3" >
-      <div style="height: 100px;">
+      <div style="height: 130px;">
 
         <p><img src="{{pic}}" class="img-circle pull-left" style="width: 80px; height: 80px; margin-right: 10px;"></p>
 
@@ -119,28 +119,26 @@
     </div>
 
     <div class="col-xs-7">
-      <div style="height: 100px;">
+      <div style="height: 130px;">
         <b> {{article_name}} </b> <br>
         {{route}} <br>
 
-        <p>
-          <img alt="Brand" src="/images/green-circle.png" width="15px" height="15px"> {{start}} <br>
+        <br>
+        <img alt="Brand" src="/images/green-circle.png" width="15px" height="15px"> {{start}} <br>
 
-          <img alt="Brand" src="/images/red-circle.png" width="15px" height="15px"> {{end}} <br>
-        </p>
+        <img alt="Brand" src="/images/red-circle.png" width="15px" height="15px"> {{end}} <br>
 
+        <br>
         Fahrzeug: {{car}}
 
       </div>
     </div>
 
     <div class="col-xs-2">
-      <div style="height: 90px;">
+      <div style="height: 130px;">
         <div class="pull-right">
-          <p>
-            <b><span style="font-size: xx-large"> {{price}}€ </span></b>  <br>
-            pro Person
-          </p>
+            <b><span style="font-size: xx-large"> {{price}}€ </span></b><br>
+            pro Person <br>
 
           <br>
 
@@ -213,21 +211,11 @@
 
   <a style="display:block" href="{{link}}">
 
-  <div class="item-onclik" style="height: 110px;">
+  <div class="item-onclik" style="height: 20px;">
 
 
-    <div class="col-xs-2" >
-      <div style="height: 100px;">
-
-        <b> {{rent}} </b> <br>
-
-        <div class="clearfix"></div>
-
-      </div>
-    </div>
-
-    <div class="col-xs-2" >
-      <div style="height: 100px;">
+    <div class="col-xs-3" >
+      <div style="height: 20px;">
 
         <b> {{date}} </b> <br>
 
@@ -235,7 +223,7 @@
     </div>
 
     <div class="col-xs-2" >
-      <div style="height: 100px;">
+      <div style="height: 20px;">
 
         <b> {{frei_ab}} </b> <br>
 
@@ -243,34 +231,23 @@
     </div>
 
     <div class="col-xs-2" >
-      <div style="height: 100px;">
+      <div style="height: 20px;">
 
         <b> {{frei_bis}} </b> <br>
 
       </div>
     </div>
 
-    <div class="col-xs-4">
-      <div style="height: 100px;">
-        <b> {{title}} </b> <br>
-        {{route}} <br>
-
-        <p>
+    <div class="col-xs-3">
+      <div style="height: 20px;">
           {{stadtteil}}
-        </p>
-
       </div>
     </div>
 
     <div class="col-xs-2">
-      <div style="height: 90px;">
+      <div style="height: 20px;">
         <div class="pull-right">
-          <p>
-            <b><span style="font-size: x-large"> {{price}} </span></b>  <br>
-          </p>
-
-          <br>
-
+          {{rent}}
         </div>
 
       </div>
@@ -283,11 +260,11 @@
 
 <template name="Itemrating">
 
-  <div class="clickable-item" onmouseover="" style="height: 110px; cursor: pointer;">
+  <div class="clickable-item" onmouseover="" style="height: 150px; cursor: pointer;">
 
 
-    <div class="col-xs-3" >
-      <div style="height: 100px;">
+    <div class="col-xs-4" >
+      <div style="height: 120px;">
 
         <p><img src="{{pic}}" class="img-circle pull-left" style="width: 80px; height: 80px; margin-right: 10px;"></p>
 
@@ -301,23 +278,25 @@
       </div>
     </div>
 
-    <div class="col-xs-9">
-      <div style="height: 100px;">
+    <div class="col-xs-8">
+      <div style="height: 120px;">
         <b> {{quorter}} </b> <br>
-        {{adress}} <br>
-        <hr>
-        {{tel}}
-        <hr>
+        Adresse: {{adress}} <br>
+        Telefon: {{tel}}
 
+        <hr class="small-margin">
+        <b>Kommentar der Besucher</b> <br>
         <div>
           <div class="pull-left">
-            <p><img src="{{commentar_pic}}" class="img-circle pull-left" style="width: 80px; height: 80px; margin-right: 10px;"></p>
+            <p><img src="{{commentar_pic}}" class="img-circle pull-left" style="width: 40px; height: 40px; margin-right: 10px;"></p>
           </div>
           {{commentar}}
         </div>
 
+
       </div>
     </div>
 
-   </div>
+  </div>
+  <hr>
 </template>
