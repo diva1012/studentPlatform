@@ -8,3 +8,10 @@ Template.Itemhaus.events({
 	"click .item-onclik": function(event, template){
 	}
 });
+
+
+Template.Itemrating.events({
+	"click .clickable-item": function(event, template){
+		window.location.href = this.link;
+	}
+});

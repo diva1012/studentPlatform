@@ -239,7 +239,7 @@ section.success a.active {
     display: block;
     position: relative;
     margin: 0 auto;
-    max-width: 400px;
+    max-width: 300px;
 }
 
 #portfolio .portfolio-item .portfolio-link .caption {
@@ -502,3 +502,22 @@ footer .footer-below {
 .gi-3x{font-size: 3em;}
 .gi-4x{font-size: 4em;}
 .gi-5x{font-size: 5em;}
+
+
+
+.container-full-height{
+  position:absolute;
+  top: 0px;
+  bottom:0px; /* Positioniert dies ganz unten */
+}
+
+
+#fullPage {
+    position: absolute;
+    min-width: 100%;
+    min-height: 100%;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    transition: background 1s linear;
+}

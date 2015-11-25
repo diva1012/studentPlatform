@@ -10,3 +10,11 @@ $('#btnToggle').click(function(){
   }
 });
 });
+
+
+Template.Header.events({
+  "click .home-button": function(event, template){
+    //$('.header').css('background-color', 'none');
+    Session.set("colorOne", "none");
+  }
+});

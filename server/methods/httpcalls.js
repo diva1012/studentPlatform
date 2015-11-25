@@ -42,7 +42,15 @@ Meteor.methods({
               "&input/min_groesse=" + minSize +
               "&input/max_miete=" + maxRent +
               "&_user=2ed25222-c31c-42c8-b853-2c15e84ae95b&_apikey=2ed25222c31c42c8b8532c15e84ae95b1606321018eef3ce728d92b47edb83a19ec2b0a118aaaf3f3031b9caca58b847ee4826207b657a53b7cae209479fee9124d923af62941781b97329e4749ab24a")
-    }
+    },
+
+    getRaitings: function(city, item) {
+
+            return HTTP.get("https://api.import.io/store/data/269fccbd-3f05-4c21-94ec-b38c51194ed4/_query?input/" +
+              "item=" + item +
+              "&input/city=" + city +
+              "&_user=2ed25222-c31c-42c8-b853-2c15e84ae95b&_apikey=2ed25222c31c42c8b8532c15e84ae95b1606321018eef3ce728d92b47edb83a19ec2b0a118aaaf3f3031b9caca58b847ee4826207b657a53b7cae209479fee9124d923af62941781b97329e4749ab24a")
+          }
 
 
 });

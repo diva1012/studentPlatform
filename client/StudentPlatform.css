@@ -33,7 +33,7 @@ max-height: 50px;
 }
 
 
-.header {background-color:#ffffff;border-width:0;}
+.header {border-width:0;}
 .header .navbar-collapse {background-color:#ffffff;}
 .btn,.form-control,.panel,.list-group,.well {border-radius:1px;box-shadow:0 0 0;}
 .form-control {border-color:#d7d7d7;}
@@ -129,6 +129,7 @@ h3,h4,h5 {
 
 .container-full-width {
   width: 100%;
+  height: 100%;
   padding-left: 0px;
   padding-right: 0px;
   padding-top: 0px;
@@ -137,6 +138,13 @@ h3,h4,h5 {
 
 .container-shorter-width {
   max-width: 1000px;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-top: 0px
+}
+
+.container-shorter-width-rating {
+  max-width: 1600px;
   padding-left: 0px;
   padding-right: 0px;
   padding-top: 0px

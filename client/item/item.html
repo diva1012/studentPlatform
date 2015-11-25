@@ -280,3 +280,44 @@
 
 </a>
 </template>
+
+<template name="Itemrating">
+
+  <div class="clickable-item" onmouseover="" style="height: 110px; cursor: pointer;">
+
+
+    <div class="col-xs-3" >
+      <div style="height: 100px;">
+
+        <p><img src="{{pic}}" class="img-circle pull-left" style="width: 80px; height: 80px; margin-right: 10px;"></p>
+
+        <b> {{name}} </b> <br>
+
+        Raiting: TODO
+
+
+        <div class="clearfix"></div>
+
+      </div>
+    </div>
+
+    <div class="col-xs-9">
+      <div style="height: 100px;">
+        <b> {{quorter}} </b> <br>
+        {{adress}} <br>
+        <hr>
+        {{tel}}
+        <hr>
+
+        <div>
+          <div class="pull-left">
+            <p><img src="{{commentar_pic}}" class="img-circle pull-left" style="width: 80px; height: 80px; margin-right: 10px;"></p>
+          </div>
+          {{commentar}}
+        </div>
+
+      </div>
+    </div>
+
+   </div>
+</template>
