@@ -4,3 +4,21 @@
   height: 800px;
   -max-height: calc(100% - 500px);
 }
+
+
+.page-size {
+  width: 800px;
+  max-width: 100%;
+  height: 800px;
+  -max-height: calc(100% - 500px);
+  overflow: scroll;
+}
+
+
+.pge-size {
+  overflow: scroll;
+  position: fixed;
+  top: 100px;
+  bottom: 0px;
+  width: 40%;
+}

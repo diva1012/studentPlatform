@@ -19,6 +19,8 @@ Template.Rating.rendered = function() {
       // Add the map to the Session for later handling
     });
 
+    Session.set("googleMarkers", [])
+
 
 
 
@@ -71,10 +73,20 @@ Template.Rating.events({
 
               var ratingsMap = Session.get("ratingsMap")
 
-              var markerX = new google.maps.Marker({
+              // Delete existing markers
+              var markers = Session.get("googleMarkers")
+              for (var i = 0; i < markers.length; i++ ) {
+                  markers[i].setMap(null);
+              }
+              markers.length = 0;
+
+              var marker = new google.maps.Marker({
                 position: new google.maps.LatLng(respJson[0].latitude, respJson[0].longitude),
                 map: GoogleMaps.maps.exampleMap.instance,
               });
+
+              var markers = Session.get("googleMarkers")
+              markers.push(marker);
 
             }
           });
