@@ -15,3 +15,13 @@ Template.Itemrating.events({
 		window.location.href = this.link;
 	}
 });
+
+Template.Item.helpers({
+	getLogo: function(){
+		if (this.provider === "bike24"){
+			return "http://branchentest.ausgezeichnet.org/images/shop/online-fahrradshops-2013/bike24-logo.png";
+		} else {
+			return "http://www.fahrrad.de/info/content/themes/fahrrad.de/_/img/logo.png";
+		}
+	}
+});

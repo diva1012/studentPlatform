@@ -57,42 +57,40 @@ Template.Rating.events({
         console.log("error occured on receiving data from server. ", err );
       } else {
         var results = respJson.data.results
+        //var results = respJson.data;
+
         // Set the ratings
         Session.set("ratingsList", results);
         Session.set("filteredRatingList", results);
 
+        // Delete existing markers
+        var markers = Session.get("googleMarkers")
+        for (var i = 0; i < markers.length; i++ ) {
+            markers[i].setMap(null);
+        }
+        Session.set("googleMarkers", []);
 
         // Add red dots on google
         for (var i = 0; i < results.length; i++) {
 
+          // TODO adjust adress
           Meteor.call('getGeocode', results[i].adress, function(err, respJson) {
-
             if(err) {
               console.log("error occured on receiving data from server. ", err );
             } else {
-
-              var ratingsMap = Session.get("ratingsMap")
-
-              // Delete existing markers
-              var markers = Session.get("googleMarkers")
-              for (var i = 0; i < markers.length; i++ ) {
-                  markers[i].setMap(null);
-              }
-              markers.length = 0;
-
               var marker = new google.maps.Marker({
                 position: new google.maps.LatLng(respJson[0].latitude, respJson[0].longitude),
                 map: GoogleMaps.maps.exampleMap.instance,
               });
 
-              var markers = Session.get("googleMarkers")
-              markers.push(marker);
+              var markersNew = Session.get("googleMarkers").push(marker);
+              Session.set("googleMarkers", markersNew);
 
+              GoogleMaps.maps.exampleMap.instance.setCenter(new google.maps.LatLng(respJson[0].latitude, respJson[0].longitude))
             }
           });
+
         }
-
-
 
       }
     });

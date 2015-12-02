@@ -25,3 +25,7 @@
 .verticalLine {
     border-left: thick solid #ff0000;
 }
+
+.panel-fixed-height {
+  height: 450px;
+}

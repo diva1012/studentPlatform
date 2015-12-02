@@ -26,6 +26,13 @@
         <img class="rating-button" alt="Brand" src="/images/Rating.png" width="20px" height="20px">
       </a>
 
+      <form class="form-inline top-distance2">
+        <div class="form-group">
+          <input type="text" class="form-control" id="srch-bike" placeholder="Fahrradtyp">
+        </div>
+        <button class="btn btn-default btn-primary get-results" id="btn-search-bike" type='button'><i class="glyphicon glyphicon-search"></i></button>
+      </form>
+
       <div id="menu-button" class="navbar-brand pull-right">
         <img class="rating-button" alt="Brand" src="/images/Hamburger.png" width="20px" height="20px">
       </div>
@@ -75,79 +82,12 @@
 
 
    <div class="row row-5-gutter">
-     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 col-5-gutter">
 
        {{#each bicycles}}
-         {{> Itembicycle}}
+         {{> Item}}
        {{/each}}
-
-        {{> Item2}}
-        {{> Item2}}
-        {{> Item}}
-        {{> Item2}}
-        {{> Item}}
-        {{> Item2}}
-
-
-     </div>
-
-
-     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 col-5-gutter">
-
-        {{> Item}}
-        {{> Item2}}
-        {{> Item}}
-        {{> Item2}}
-        {{> Item}}
-        {{> Item2}}
-
-
-     </div>
-
-     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 col-5-gutter">
-
-        {{> Item2}}
-        {{> Item}}
-        {{> Item2}}
-        {{> Item2}}
-        {{> Item}}
-        {{> Item2}}
-
-     </div>
-
-     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 col-5-gutter">
-
-        {{> Item2}}
-        {{> Item}}
-        {{> Item2}}
-        {{> Item}}
-        {{> Item2}}
-        {{> Item}}
-
-     </div>
-
-     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 col-5-gutter">
-
-        {{> Item}}
-        {{> Item2}}
-        {{> Item2}}
-        {{> Item}}
-        {{> Item2}}
-        {{> Item}}
-
-     </div>
-
-     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 col-5-gutter">
-
-        {{> Item2}}
-        {{> Item2}}
-        {{> Item}}
-        {{> Item2}}
-        {{> Item}}
-        {{> Item2}}
-
-     </div>
   </div>
+  
 </div>
 
 </template>
