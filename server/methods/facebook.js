@@ -36,12 +36,17 @@ Facebook.prototype.getGroupsData = function() {
 }
 */
 
-Facebook.prototype.getGroupsData = function() {
+Facebook.prototype.getGroupsData = function(groupId) {
 
     //return this.query('/1714786542089655/feed');
+    //return this.query('/178638415821259/feed?fields=picture,comments.limit(3),link');
+    var options = "/feed?fields=message,picture,comments.limit(3),link,name";
 
-    return this.query('/178638415821259/feed?fields=picture,comments.limit(3),link');
+    return this.query('/' + groupId + options);
+    //wg.wohnung.berlin
 }
+
+
 
 Facebook.prototype.getGroupsFiles = function() {
 
@@ -84,7 +89,7 @@ Meteor.methods({
 
     getGroupsData: function() {
         var fb = new Facebook(Meteor.user().services.facebook.accessToken);
-        var data = fb.getGroupsData();
+        var data = fb.getGroupsData("wohnung.frei.berlin");
         return data;
     },
 
@@ -98,6 +103,12 @@ Meteor.methods({
         var fb = new Facebook(Meteor.user().services.facebook.accessToken);
         var data = fb.getGroupsPost();
         return data;
+    },
+
+    getGroupsDataHaus: function () {
+          var fb = new Facebook(Meteor.user().services.facebook.accessToken);
+          var data = fb.getGroupsData("wohnung.frei.berlin");
+          return data;
     },
 
 

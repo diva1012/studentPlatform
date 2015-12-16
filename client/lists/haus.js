@@ -16,6 +16,17 @@ Template.Haus.rendered = function() {
       }
     });
 
+    Meteor.call('getGroupsDataHaus', function(err, data) {
+
+      if(err) {
+        console.log("error occured on receiving data from server. ", err );
+
+      } else {
+        Session.set("groupsDataHaus", data.data);
+      }
+    });
+
+
     $('#toggle-type-haus')['bootstrapSwitch']();
     $('#toggle-type-haus').on('switch-change', function (event, data) {
       if (data.value){
@@ -123,7 +134,24 @@ Template.Haus.helpers({
   },
 
   items: function() {
-    return Session.get("filteredItemsListHaus");
-  },
+
+    var data1 = Session.get("filteredItemsListHaus");
+    var fbData = Session.get("groupsDataHaus")
+
+    var newArr = [];
+
+    newArr = newArr.concat(data1);
+    newArr = newArr.concat(fbData);
+
+    for (var i = newArr.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var temp = newArr[i];
+      newArr[i] = newArr[j];
+      newArr[j] = temp;
+    }
+
+    return newArr;
+  }
+
 
 });

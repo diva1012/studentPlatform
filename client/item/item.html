@@ -211,54 +211,78 @@
 
 <template name="Itemhaus">
 
-  <a style="display:block" href="{{link}}">
 
-  <div class="item-onclik" style="height: 20px;">
-
-
-    <div class="col-xs-3" >
-      <div style="height: 20px;">
-
-        <b> {{date}} </b> <br>
-
+  {{#if picture}}
+  <div class="item-onclik" style="height: 200px;">
+    <a style="display:block" href="{{link}}">
+      <div class="col-xs-3" style="height: 180px;">
+        <img src="{{picture}}" style="width: 100%;">
       </div>
-    </div>
 
-    <div class="col-xs-2" >
-      <div style="height: 20px;">
+      <div class="col-xs-9" >
+        <div style="height: 180px;">
 
-        <b> {{frei_ab}} </b> <br>
+          <b>{{name}}</b> <br>
 
-      </div>
-    </div>
-
-    <div class="col-xs-2" >
-      <div style="height: 20px;">
-
-        <b> {{frei_bis}} </b> <br>
-
-      </div>
-    </div>
-
-    <div class="col-xs-3">
-      <div style="height: 20px;">
-          {{stadtteil}}
-      </div>
-    </div>
-
-    <div class="col-xs-2">
-      <div style="height: 20px;">
-        <div class="pull-right">
-          {{rent}}
         </div>
 
       </div>
-    </div>
+    </a>
+  </div>
 
-   </div>
 
-</a>
-</template>
+  {{else}}
+    <a style="display:block" href="{{link}}">
+
+    <div class="item-onclik" style="height: 20px;">
+
+
+      <div class="col-xs-3" >
+        <div style="height: 20px;">
+
+          <b> {{date}} </b> <br>
+
+        </div>
+      </div>
+
+      <div class="col-xs-2" >
+        <div style="height: 20px;">
+
+          <b> {{frei_ab}} </b> <br>
+
+        </div>
+      </div>
+
+      <div class="col-xs-2" >
+        <div style="height: 20px;">
+
+          <b> {{frei_bis}} </b> <br>
+
+        </div>
+      </div>
+
+      <div class="col-xs-3">
+        <div style="height: 20px;">
+            {{stadtteil}}
+        </div>
+      </div>
+
+      <div class="col-xs-2">
+        <div style="height: 20px;">
+          <div class="pull-right">
+            {{rent}}
+          </div>
+
+        </div>
+      </div>
+
+     </div>
+
+    </a>
+
+  {{/if}}
+
+  </template>
 
 <template name="Itemrating">
 
