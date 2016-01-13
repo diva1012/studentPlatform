@@ -27,6 +27,13 @@
         <img class="rating-button" alt="Brand" src="/images/Rating.png" width="20px" height="20px">
       </a>
 
+      <form class="form-inline top-distance2">
+        <div class="form-group">
+          <input type="text" class="form-control" id="srch-chair" placeholder="Möbeltyp">
+        </div>
+        <button class="btn btn-default btn-primary get-results" id="btn-search-chair" type='button'><i class="glyphicon glyphicon-search"></i></button>
+      </form>
+
       <div id="menu-button" class="navbar-brand pull-right">
         <img class="rating-button" alt="Brand" src="/images/Hamburger.png" width="20px" height="20px">
       </div>
@@ -80,8 +87,6 @@
                 {{#each items}}
 
                   {{> Itemchair}}
-
-                  <hr>
 
                 {{/each}}
 

@@ -40,15 +40,27 @@ Template.Bicycle.rendered = function() {
     mySetColors("#05c272", "#03663c");
 
     // Get Fahrräder
-    Meteor.call('getBicycles', "Cityrad", function(err, respJson) {
+    Meteor.call('getBicycles', "Mountainbike", function(err, respJson) {
 
       if(err) {
         console.log("error occured on receiving data from server. ", err );
       } else {
-        Session.set("bicycles",respJson.data.results);
+        Session.set("bicycles1",respJson.data.results);
         Session.set("filteredBicycles",respJson.data.results);
       }
     });
+
+    // Get Ebay data
+    Meteor.call('getEbay', ["Mountainbike"], function(err, respJson) {
+
+      if(err) {
+        console.log("error occured on receiving data from server. ", err );
+      } else {
+        Session.set("bicycles2", respJson.result);
+        Session.set("filteredBicycles",respJson.result);
+      }
+    });
+
 
     // Create toggles
 
@@ -145,7 +157,22 @@ Template.Bicycle.helpers({
   },
 
   bicycles: function () {
-      return Session.get("filteredBicycles");
+
+    var data1 = Session.get("bicycles1");
+    var data2 = Session.get("bicycles2");
+
+    var newArr = [];
+
+    newArr = newArr.concat(data1);
+    newArr = newArr.concat(data2);
+
+    var o = newArr;
+    for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+    
+
+    Session.set("filteredBicycles", o);
+
+    return Session.get("filteredBicycles");
   }
 
 });

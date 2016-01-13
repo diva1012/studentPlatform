@@ -30,3 +30,23 @@ Template.Item.helpers({
 		}
 	}
 });
+
+Template.Chair.events({
+	"click .clickable-item": function(event, template){
+		window.location.href = this.viewItemURL;
+	}
+});
+
+Template.Item.events({
+	"click .clickable-item": function(event, template){
+		
+		var link ="";
+		if (this.link) {
+			link = this.link;
+		} else {
+			link = this.viewItemURL;
+		}
+
+		window.location.href = link;
+	}
+});
