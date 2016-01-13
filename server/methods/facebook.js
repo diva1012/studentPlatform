@@ -47,7 +47,6 @@ Facebook.prototype.getGroupsData = function(groupId) {
 }
 
 
-
 Facebook.prototype.getGroupsFiles = function() {
 
     //return this.query('/1714786542089655/feed');
@@ -87,10 +86,27 @@ Meteor.methods({
         return data;
     },
 
-    getGroupsData: function() {
+    getGroupsData: function(groupId) {
+        /*var fb = new Facebook(Meteor.user().services.facebook.accessToken);
+        var data = fb.getGroupsData(groupId);
+        return data; */
+
+        var id1 = 'wohnung.frei.berlin'
+        var id2 = 'WG.Zimmer.frei.in.Berlin'
+        var id3 = 'WohnungenundWGsinBerlin'
+
         var fb = new Facebook(Meteor.user().services.facebook.accessToken);
-        var data = fb.getGroupsData("wohnung.frei.berlin");
-        return data;
+
+        var result = [];
+        var data1 = fb.getGroupsData(id1);
+        var data2 = fb.getGroupsData(id2);
+        var data3 = fb.getGroupsData(id3);
+
+        result = result.concat(data1.data);
+        result = result.concat(data2.data);
+        result = result.concat(data3.data);
+
+        return result;
     },
 
     getGroupsFiles: function() {
@@ -105,10 +121,30 @@ Meteor.methods({
         return data;
     },
 
-    getGroupsDataHaus: function () {
+    getGroupsDataHaus: function (groupId) {
+      /*
           var fb = new Facebook(Meteor.user().services.facebook.accessToken);
-          var data = fb.getGroupsData("wohnung.frei.berlin");
+          var data = fb.getGroupsData(groupId);
           return data;
+      */
+
+      var id1 = 'wohnung.frei.berlin'
+      var id2 = 'WG.Zimmer.frei.in.Berlin'
+      var id3 = 'WohnungenundWGsinBerlin'
+
+      var fb = new Facebook(Meteor.user().services.facebook.accessToken);
+
+      var result = [];
+      var data1 = fb.getGroupsData(id1);
+      var data2 = fb.getGroupsData(id2);
+      var data3 = fb.getGroupsData(id3);
+
+      result = result.concat(data1.data);
+      result = result.concat(data2.data);
+      result = result.concat(data3.data);
+
+      return result;
+
     },
 
 

@@ -212,26 +212,83 @@
 <template name="Itemhaus">
 
 
+
+
   {{#if picture}}
-  <div class="item-onclik" style="height: 200px;">
-    <a style="display:block" href="{{link}}">
-      <div class="col-xs-3" style="height: 180px;">
-        <img src="{{picture}}" style="width: 100%;">
+
+  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 col-5-gutter clickable-item" onmouseover="" style="cursor: pointer;">
+
+  <div class="panel panel-default panel-fixed-height">
+    <div>
+      <img src="{{picture}}" style="width: 100%;">
+    </div>
+
+    <div class="panel-body panel-small-padding">
+
+      <hr class="small-margin">
+
+      <div>
+        <h5 class="small-margin">
+          <span class="price-text-color pull-right">{{name}}</span>
+        </h5>
       </div>
 
-      <div class="col-xs-9" >
-        <div style="height: 180px;">
 
-          <b>{{name}}</b> <br>
+      <hr class="small-margin">
 
-        </div>
+      <img src="https://www.facebookbrand.com/img/fb-art.jpg" class="company-logo pull-right pull-down">
 
-      </div>
-    </a>
-  </div>
+    </div>
 
+   </div>
+ </div>
 
   {{else}}
+
+  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 col-5-gutter clickable-item" onmouseover="" style="cursor: pointer;">
+
+  <!--<a style="display:block" href="{{link}}"> -->
+  <div class="panel panel-default panel-fixed-height">
+
+    <h3 class="small-margin">
+      <center>WG-Gesucht.de</center>
+    </h3>
+
+    <div class="panel-body panel-small-padding">
+
+      <div>
+
+        <h4>
+          Gepostet am: {{date}}
+        </h4>
+
+        <h4 class="small-margin">
+          Frei ab: {{frei_ab}}
+        </h4>
+
+        <h4 class="small-margin">
+          Frei bis: {{frei_bis}}
+        </h4>
+
+        <h4 class="small-margin">
+          Adresse: {{stadtteil}}
+        </h4>
+
+      </div>
+
+      <h4 class="small-margin">
+        Miete: {{rent}}
+      </h4>
+
+      <img src="http://www.wg-gesucht.de/assets/precomposed/apple-touch-icon-144x144-precomposed-wg-gesucht.png" class="company-logo pull-right pull-down">
+
+    </div>
+
+   </div>
+
+   <!--</a> -->
+ </div>
+  <!--
     <a style="display:block" href="{{link}}">
 
     <div class="item-onclik" style="height: 20px;">
@@ -279,7 +336,7 @@
      </div>
 
     </a>
-
+-->
   {{/if}}
 
   </template>

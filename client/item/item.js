@@ -6,6 +6,11 @@ $('.pull-down').each(function() {
 
 Template.Itemhaus.events({
 	"click .item-onclik": function(event, template){
+	},
+
+	// TODO Check if that work
+	"click .clickable-item": function(event, template){
+		window.location.href = this.link;
 	}
 });
 

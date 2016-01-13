@@ -69,70 +69,16 @@
 
     <!-- HEADER END -->
 
-    <div class="container container-shorter-width layout-shorter-gutter" id="main">
+<!--    <div class="container container-shorter-width layout-shorter-gutter" id="main"> -->
+
+    <div class="container container-full-width container-shorter-width-bycicle layout-shorter-gutter" id="main">
 
       <div class="row row-5-gutter">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-12-gutter" style="padding-left: 0px; padding-right: 0px;">
-          <div class="panel panel-default">
-            <div class="panel-body">
-              <div class="row">
-
-                <!-- Header -->
-                <div style="height: 20px;">
-
-                  <div class="col-xs-3" >
-                    <div style="height: 20px;">
-
-                      <b> Date </b>
-
-                    </div>
-                  </div>
-
-                  <div class="col-xs-2" >
-                    <div style="height: 20px;">
-
-                      <b> Frei ab </b>
-
-                    </div>
-                  </div>
-
-                  <div class="col-xs-2" >
-                    <div style="height: 20px;">
-
-                      <b> Frei bis </b>
-
-                    </div>
-                  </div>
-
-                  <div class="col-xs-3">
-                    <div style="height: 20px;">
-                        <b>Stadtteil</b>
-                    </div>
-                  </div>
-
-                  <div class="col-xs-2">
-                    <div style="height: 20px;">
-                      <div class="pull-right">
-                        <b>Miete</b>
-                      </div>
-
-                    </div>
-                  </div>
-                </div>
-                <hr>
-                <!-- Header END-->
-
                 {{#each items}}
                   {{> Itemhaus}}
-                  <hr>
                 {{/each}}
 
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
-
 
 </template>

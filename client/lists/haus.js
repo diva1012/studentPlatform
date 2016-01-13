@@ -16,16 +16,26 @@ Template.Haus.rendered = function() {
       }
     });
 
-    Meteor.call('getGroupsDataHaus', function(err, data) {
+    // Take the data from the groups defined in the backend
+    Meteor.call('getGroupsDataHaus', "wohnung.frei.berlin", function(err, data) {
 
       if(err) {
         console.log("error occured on receiving data from server. ", err );
 
       } else {
-        Session.set("groupsDataHaus", data.data);
+        Session.set("groupsDataHaus", data);
       }
     });
 
+    Meteor.call('getGroupsDataHaus', "WG.Zimmer.frei.in.Berlin", function(err, data) {
+
+      if(err) {
+        console.log("error occured on receiving data from server. ", err );
+
+      } else {
+        Session.set("groupsDataHaus2", data.data);
+      }
+    });
 
     $('#toggle-type-haus')['bootstrapSwitch']();
     $('#toggle-type-haus').on('switch-change', function (event, data) {
@@ -136,12 +146,14 @@ Template.Haus.helpers({
   items: function() {
 
     var data1 = Session.get("filteredItemsListHaus");
-    var fbData = Session.get("groupsDataHaus")
+    var fbData1 = Session.get("groupsDataHaus");
+    var fbData2 = Session.get("groupsDataHaus2");
 
     var newArr = [];
 
     newArr = newArr.concat(data1);
-    newArr = newArr.concat(fbData);
+    newArr = newArr.concat(fbData1);
+    newArr = newArr.concat(fbData2);
 
     for (var i = newArr.length - 1; i > 0; i--) {
       var j = Math.floor(Math.random() * (i + 1));
