@@ -28,10 +28,22 @@ Template.Bicycle.events({
       if(err) {
         console.log("error occured on receiving data from server. ", err );
       } else {
-        Session.set("bicycles",respJson.data.results);
+        Session.set("bicycles1",respJson.data.results);
         Session.set("filteredBicycles",respJson.data.results);
       }
     });
+
+    // Get Ebay data
+    Meteor.call('getEbay', [bicycleType], function(err, respJson) {
+
+      if(err) {
+        console.log("error occured on receiving data from server. ", err );
+      } else {
+        Session.set("bicycles2", respJson.result);
+        Session.set("filteredBicycles",respJson.result);
+      }
+    });
+
   }
 
 });
@@ -168,7 +180,7 @@ Template.Bicycle.helpers({
 
     var o = newArr;
     for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
-    
+
 
     Session.set("filteredBicycles", o);
 
