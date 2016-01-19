@@ -27,10 +27,14 @@
       </a>
 
       <form class="form-inline top-distance2">
-        <div class="form-group">
-          <input type="text" class="form-control" id="srch-bike" placeholder="Fahrradtyp">
-        </div>
+
+        <select class="btn btn-default get-results selectpicker" id="srch-bike" data-style="btn-primary" style="width: 200px;">
+          <option>Mountainbike</option>
+          <option>Citybike</option>
+          <option>Einrad</option>
+        </select>
         <button class="btn btn-default btn-primary get-results" id="btn-search-bike" type='button'><i class="glyphicon glyphicon-search"></i></button>
+
       </form>
 
       <div id="menu-button" class="navbar-brand pull-right">
@@ -81,13 +85,14 @@
   <div class="container container-full-width container-shorter-width-bycicle layout-shorter-gutter" id="main">
 
 
+    {{#each bicycles}}
+      {{> Item}}
+    {{/each}}
+
    <div class="row row-5-gutter">
 
-       {{#each bicycles}}
-         {{> Item}}
-       {{/each}}
   </div>
-  
+
 </div>
 
 </template>

@@ -121,12 +121,7 @@ Meteor.methods({
         return data;
     },
 
-    getGroupsDataHaus: function (groupId) {
-      /*
-          var fb = new Facebook(Meteor.user().services.facebook.accessToken);
-          var data = fb.getGroupsData(groupId);
-          return data;
-      */
+    getGroupsDataHaus: function () {
 
       var id1 = 'wohnung.frei.berlin'
       var id2 = 'WG.Zimmer.frei.in.Berlin'
@@ -139,9 +134,17 @@ Meteor.methods({
       var data2 = fb.getGroupsData(id2);
       var data3 = fb.getGroupsData(id3);
 
-      result = result.concat(data1.data);
-      result = result.concat(data2.data);
-      result = result.concat(data3.data);
+      if (data1.data != undefined) {
+        result = result.concat(data1.data);
+      }
+
+      if (data2.data != undefined) {
+        result = result.concat(data2.data);
+      }
+
+      if (data3.data != undefined) {
+        result = result.concat(data3.data);
+      }
 
       return result;
 

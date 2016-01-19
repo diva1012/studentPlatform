@@ -2,7 +2,7 @@
 Session.setDefault("slider-bicycle1", [20, 80]);
 Session.setDefault("slider2", [20, 80]);
 Session.setDefault("slider3", [20, 80]);
-
+Session.setDefault("load", true);
 
 Template.Bicycle.events({
   "click #menu-button": function(event, template){
@@ -23,6 +23,7 @@ Template.Bicycle.events({
     var bicycleType = document.getElementById('srch-bike').value;
 
     // Get Fahrräder
+    Session.set("load", true);
     Meteor.call('getBicycles', bicycleType, function(err, respJson) {
 
       if(err) {
@@ -31,6 +32,7 @@ Template.Bicycle.events({
         Session.set("bicycles1",respJson.data.results);
         Session.set("filteredBicycles",respJson.data.results);
       }
+      Session.set("load", false);
     });
 
     // Get Ebay data
@@ -156,6 +158,10 @@ Template.Bicycle.rendered = function() {
 
 Template.Bicycle.helpers({
 
+  load: function() {
+    return Session.get("load");
+  },
+
   slider_bicycle1: function () {
       return Session.get("slider-bicycle1");
   },
@@ -175,8 +181,13 @@ Template.Bicycle.helpers({
 
     var newArr = [];
 
-    newArr = newArr.concat(data1);
-    newArr = newArr.concat(data2);
+    if(data1 && data1.length != 0) {
+      newArr = newArr.concat(data1);
+    }
+
+    if(data2 && data2.length != 0) {
+      newArr = newArr.concat(data2);
+    }
 
     var o = newArr;
     for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
