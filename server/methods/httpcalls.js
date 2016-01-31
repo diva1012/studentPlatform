@@ -3301,9 +3301,13 @@ Meteor.methods({
 
     getBicycles: function(item) {
 
-            return HTTP.get("https://api.import.io/store/connector/625c79cb-2d4a-480c-9ff6-baee76ad0730/_query?input="
+            var data =  HTTP.get("https://api.import.io/store/connector/625c79cb-2d4a-480c-9ff6-baee76ad0730/_query?input="
               + "type:" + item +
               "&&_apikey=2ed25222c31c42c8b8532c15e84ae95b1606321018eef3ce728d92b47edb83a19ec2b0a118aaaf3f3031b9caca58b847ee4826207b657a53b7cae209479fee9124d923af62941781b97329e4749ab24a")
+
+
+              return data;
+
     }
 
 });

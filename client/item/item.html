@@ -16,8 +16,11 @@
 
       <div>
         <h5 class="small-margin">
-          <span>{{title}}</span> <span class="price-text-color pull-right">{{price}}</span>
+          <span>{{title}}</span>
         </h5>
+
+        <span class="price-text-color pull-right">{{price}} {{priceCut}}</span>
+
       </div>
 
 
@@ -48,10 +51,17 @@
 
      <div>
        <h5 class="small-margin">
-         <span class="price-text-color pull-right">{{title}}</span>
+         <span>{{title}}</span>
        </h5>
 
-       <span>{{location}}</span>
+      Adresse: {{location}}
+
+      <span class="price-text-color pull-right">{{sellingStatus.convertedCurrentPrice.amount}}</span>
+      <hr class="small-margin">
+      Zustand: {{condition.conditionDisplayName}}
+      <hr class="small-margin">
+      {{subtitle}}
+
 
      </div>
 

@@ -1,8 +1,11 @@
 // slider starts at 20 and 80
-Session.setDefault("slider-bicycle1", [20, 80]);
+Session.setDefault("slider-bicycle1", [50, 6000]);
 Session.setDefault("slider2", [20, 80]);
 Session.setDefault("slider3", [20, 80]);
 Session.setDefault("load", true);
+
+Session.set("isFirst", true);
+
 
 Template.Bicycle.events({
   "click #menu-button": function(event, template){
@@ -29,20 +32,49 @@ Template.Bicycle.events({
       if(err) {
         console.log("error occured on receiving data from server. ", err );
       } else {
-        Session.set("bicycles1",respJson.data.results);
-        Session.set("filteredBicycles",respJson.data.results);
+
+        var bikesBadPrice = respJson.data.results;
+
+        for (index = 0; index < bikesBadPrice.length; ++index) {
+
+          var bike = bikesBadPrice[index];
+
+          var price = bike.price
+          var indexComma = price.indexOf(",");
+          var priceGut = price.substring(0, indexComma);
+          priceGut = priceGut.replace(".","");
+          priceGut = priceGut;
+          bikesBadPrice[index].price = priceGut;
+        }
+
+        Session.set("bicycles1", bikesBadPrice);
+        Session.set("filteredBicycles1", bikesBadPrice);
       }
       Session.set("load", false);
     });
 
     // Get Ebay data
-    Meteor.call('getEbay', [bicycleType], function(err, respJson) {
+    Meteor.call('getEbay', bicycleType, function(err, respJson) {
 
       if(err) {
         console.log("error occured on receiving data from server. ", err );
       } else {
-        Session.set("bicycles2", respJson.result);
-        Session.set("filteredBicycles",respJson.result);
+
+        var bikesBadPrice = respJson.result;
+
+        for (index = 0; index < bikesBadPrice.length; ++index) {
+
+          var bike = bikesBadPrice[index];
+
+          var price = String(bike.sellingStatus.convertedCurrentPrice.amount)
+          // Remove . from thausands
+          var priceGut = price//.replace(".", "");
+          priceGut = priceGut;
+          bikesBadPrice[index].sellingStatus.convertedCurrentPrice.amount = priceGut;
+        }
+
+        Session.set("bicycles2", bikesBadPrice);
+        Session.set("filteredBicycles2", bikesBadPrice);
       }
     });
 
@@ -59,20 +91,50 @@ Template.Bicycle.rendered = function() {
       if(err) {
         console.log("error occured on receiving data from server. ", err );
       } else {
-        Session.set("bicycles1",respJson.data.results);
-        Session.set("filteredBicycles",respJson.data.results);
+
+        var bikesBadPrice = respJson.data.results;
+
+        for (index = 0; index < bikesBadPrice.length; ++index) {
+
+          var bike = bikesBadPrice[index];
+
+          var price = bike.price
+          var indexComma = price.indexOf(",");
+          var priceGut = price.substring(0, indexComma);
+          priceGut = priceGut.replace(".", "");
+          priceGut = priceGut;
+          bikesBadPrice[index].price = priceGut;
+        }
+
+        Session.set("bicycles1",bikesBadPrice);
+        Session.set("filteredBicycles",bikesBadPrice);
       }
     });
 
     // Get Ebay data
-    Meteor.call('getEbay', ["Mountainbike"], function(err, respJson) {
+    Meteor.call('getEbay', "Mountainbike", function(err, respJson) {
 
       if(err) {
         console.log("error occured on receiving data from server. ", err );
       } else {
-        Session.set("bicycles2", respJson.result);
-        Session.set("filteredBicycles",respJson.result);
+
+        var bikesBadPrice = respJson.result;
+
+        for (index = 0; index < bikesBadPrice.length; ++index) {
+
+          var bike = bikesBadPrice[index];
+
+          var price = String(bike.sellingStatus.convertedCurrentPrice.amount)
+          // Remove . from thausands
+          var priceGut = price //.replace(".", "");
+          priceGut = priceGut;
+          bikesBadPrice[index].sellingStatus.convertedCurrentPrice.amount = priceGut;
+        }
+
+        Session.set("bicycles2", bikesBadPrice);
+        Session.set("filteredBicycles2", bikesBadPrice);
       }
+
     });
 
 
@@ -143,7 +205,7 @@ Template.Bicycle.rendered = function() {
       connect: true,
       range: {
         'min': 0,
-        'max': 100,
+        'max': 10000,
       },
       step: 1
     }).on('slide', function (ev, val) {
@@ -152,7 +214,45 @@ Template.Bicycle.rendered = function() {
     }).on('change', function (ev, val) {
       // round off values on 'change' event
       Session.set('slider-bicycle1', [Math.round(val[0]), Math.round(val[1])]);
+
+
+      var data1 = Session.get("bicycles1");
+      var data2 = Session.get("bicycles2");
+
+      var allBicycles = [];
+
+      if(data1 && data1.length != 0) {
+        allBicycles = allBicycles.concat(data1);
+      }
+
+      if(data2 && data2.length != 0) {
+        allBicycles = allBicycles.concat(data2);
+      }
+
+      /*
+      for (index = 0; index < allBicycles.length; ++index) {
+        console.log(allBicycles[index]);
+      }
+      */
+
+      var filteredBicycles = $.grep( allBicycles, function( n, i ) {
+
+          var price = 0.0;
+
+          if (n.price != undefined) {
+            price = parseFloat(n.price);
+          } else {
+            price = parseFloat(n.sellingStatus.convertedCurrentPrice.amount);
+          }
+
+          return (price >= val[0] && price <= val[1]);
+      });
+
+
+      for(var j, x, i = filteredBicycles.length; i; j = Math.floor(Math.random() * i), x = filteredBicycles[--i], filteredBicycles[i] = filteredBicycles[j], filteredBicycles[j] = x);
+      Session.set("filteredBicycles", filteredBicycles);
     });
+
 
 }
 
@@ -176,24 +276,31 @@ Template.Bicycle.helpers({
 
   bicycles: function () {
 
-    var data1 = Session.get("bicycles1");
-    var data2 = Session.get("bicycles2");
+    if(Session.get("isFirst")) {
 
-    var newArr = [];
+      var data1 = Session.get("filteredBicycles1");
+      var data2 = Session.get("filteredBicycles2");
 
-    if(data1 && data1.length != 0) {
-      newArr = newArr.concat(data1);
+      var newArr = [];
+
+      if(data1 && data1.length != 0) {
+        newArr = newArr.concat(data1);
+      }
+
+      if(data2 && data2.length != 0) {
+        newArr = newArr.concat(data2);
+      }
+
+      var o = newArr;
+      for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+
+
+      Session.set("filteredBicycles", o);
+
+      Session.set("isFirst", false);
+
     }
 
-    if(data2 && data2.length != 0) {
-      newArr = newArr.concat(data2);
-    }
-
-    var o = newArr;
-    for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
-
-
-    Session.set("filteredBicycles", o);
 
     return Session.get("filteredBicycles");
   }

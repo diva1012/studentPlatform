@@ -39,7 +39,7 @@ Template.Chair.events({
 
 Template.Item.events({
 	"click .clickable-item": function(event, template){
-		
+
 		var link ="";
 		if (this.link) {
 			link = this.link;

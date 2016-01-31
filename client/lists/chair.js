@@ -3,7 +3,7 @@ Template.Chair.rendered = function() {
 
 
     // Get Fahrräder
-    Meteor.call('getEbay', [], function(err, respJson) {
+    Meteor.call('getEbay', "furniture", function(err, respJson) {
 
       if(err) {
         console.log("error occured on receiving data from server. ", err );
@@ -30,7 +30,7 @@ Template.Chair.events({
     var keyWords = keyWordsString.split(" ");
 
     // Get Fahrräder
-    Meteor.call('getEbay', keyWords, function(err, respJson) {
+    Meteor.call('getEbay', keyWords[0], function(err, respJson) {
 
       if(err) {
         console.log("error occured on receiving data from server. ", err );

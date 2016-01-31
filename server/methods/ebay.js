@@ -1,14 +1,6 @@
 Meteor.methods({
   'getEbay': function getGists(keyWords) {
 
-      console.log(keyWords);
-
-      if (keyWords.length == 0){
-        keyWords.push("Furniture");
-      }
-
-      console.log(keyWords);
-
       var ebay = Meteor.npmRequire('ebay-api');
       var params = {
         keywords: keyWords, //["Canon", "Powershot"],
@@ -21,9 +13,21 @@ Meteor.methods({
         },
 
         itemFilter: [
-          {name: 'FreeShippingOnly', value: true},
-          {name: 'MaxPrice', value: '150'}
+          {name: "TopRatedSellerOnly", value: true},
+          {name: 'AvailableTo', value: "DE"},
+          {name: 'globalId', value: "EBAY-DE"},
+
+
+          //{name: 'FreeShippingOnly', value: true},
+          //{name: 'MaxPrice', value: '150'}
         ],
+
+        //'global-id': 'EBAY-DE',
+        //"X-EBAY-SOA-GLOBAL-ID": 'EBAY-DE',
+        //AvailableTo: "DE",
+        //buyerPostalCode: "14033",
+
+        //'global-id': 'EBAY-DE'
         /*
         domainFilter: [
           {name: 'domainName', value: 'Digital_Cameras'}
@@ -34,8 +38,10 @@ Meteor.methods({
         function(done) {
 
           ebay.xmlRequest({
-              serviceName: 'Finding',
+            'serviceName': 'Finding',
               opType: 'findItemsByKeywords',
+              //'global-id': 'EBAY-DE',
+              //"X-EBAY-SOA-GLOBAL-ID": 'EBAY-DE',
               appId: 'TUBerlin-eb91-4e47-8adb-1c7d444e8e33',      // FILL IN YOUR OWN APP KEY, GET ONE HERE: https://publisher.ebaypartnernetwork.com/PublisherToolsAPI
               params: params,
               parser: ebay.parseResponseJson    // (default)
@@ -49,7 +55,12 @@ Meteor.methods({
                 done(null, []);
               } else {
                 var items = itemsResponse.searchResult.item;
-                console.log('Found', items.length, 'items');
+
+                if(items){
+                  console.log('Found', items.length, 'items');
+                } else {
+                  console.log("Nothing found")
+                }
 
                 done(null, items);
               }
